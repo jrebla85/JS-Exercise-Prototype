@@ -39,27 +39,25 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person(attrs) {
-    this.name = attrs.name;
-    this.age = attrs.age;
+ function Person(name, age) {
+    this.name = name;
+    this.age = age;
     this.stomache = [];
   };
  
-  Person.prototype.eat() = function(someFood){
+  Person.prototype.eat = function(){
     if(this.stomache.length < 10){
       this.stomach.push(someFood)
-    }else {
-      break;
-    };
+    }
   };
 
-  Person.prototype.poop() = function() {
+  Person.prototype.poop = function() {
     for(let i = 0; i < this.stomach.length; i++){
       this.stomach.pop();
     };
   }
 
-  Person.prototype.toString() = function() {
+  Person.prototype.toString = function() {
     return `${this.name}, ${this.age}`
   };
 
@@ -81,18 +79,15 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car(attrs) {
-    this.model = attrs.model;
-    this.milesPerGallon = attrs.milesPerGallon;
+ function Car(model, milesPerGallon) {
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
     this.tank = 0;
     this.odometer = 0;
   }
   
   Car.prototype.fill = function(gallons) {
     return this.tank = this.tank + gallons;
-  }
-  Car.prototype.drive() = function(distance) {
-    return this.odometer = this.odometer + this.distance, this.tank = this.tank - this.milesPerGallon
   }
   
   /*
@@ -103,13 +98,14 @@ function Airplane(name) {
           + Should return a string "Playing with x", x being the favorite toy.
   */
 
- function Baby(attrs) {
-   Person.call(this, attrs);
-   this.favoriteToy = attrs.favoriteToy;
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age);
+   this.favoriteToy = favoriteToy;
   }
  
   Baby.prototype = Object.create(Person.prototype);
-  Baby.prototype,play() = function() {
+  
+  Baby.prototype.play = function() {
     return `Playing with ${this.favoriteToy}`
   }
   
