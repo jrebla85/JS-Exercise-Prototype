@@ -42,17 +42,17 @@ function Airplane(name) {
  function Person(name, age) {
     this.name = name;
     this.age = age;
-    this.stomache = [];
+    this.stomach = [];
   };
  
-  Person.prototype.eat = function(){
-    if(this.stomache.length < 10){
+  Person.prototype.eat = function(someFood){
+    if(this.stomach.length < 10){
       this.stomach.push(someFood)
     }
   };
 
   Person.prototype.poop = function() {
-    for(let i = 0; i < this.stomach.length; i++){
+    while(this.stomach.length > 0){
       this.stomach.pop();
     };
   }
